@@ -7,13 +7,14 @@ function configuration() {
             default: 'arcade',
             arcade: {
                 gravity: {
-                    y: 50
+                    y: 0
                 }
             }
         },
         scene: {
             preload: preload,
-            create: create
+            create: create,
+            update: update
         }
     };
     return config

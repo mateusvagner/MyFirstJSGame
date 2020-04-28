@@ -1,0 +1,10 @@
+Salve a Amazonia
+
+- jogador deve apagar incendios e combater madeireiros e garimpeiros
+- Haverão niveis que desbloquearão ajudas extras para combater cada tipo de inimigo
+
+
+-----------------
+-Click com o mouse para movimentar
+-espaço para atirar
+-selecionar arma especial e clicar no ponto onde se quer atirar (enquanto arma especial selecionada mouse muda para o modo "target"
