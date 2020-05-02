@@ -1,17 +1,23 @@
 function update() {
-    
-    //  only move when you click
-    if (this.input.mousePointer.isDown) {
-        //  400 is the speed it will move towards the mouse
-        console.log("mousePointer isDown");
-        logo.setVelocity(100, 0);
 
-//        //  if it's overlapping the mouse, don't move any more
-//        if (Phaser.Rectangle.contains(logo.body, this.input.x, this.input.y)) {
-//            logo.setVelocity(0, 0);
-//        }
-    } else {
-        logo.setVelocity(0, 0);
+    //Click and Move
+    var pointer = this.input.mousePointer
+    if (pointer.isDown) {
+        var touchX = pointer.x;
+        var touchY = pointer.y;
+        logo.moveTo.moveTo(touchX, touchY);
     }
     
+    if (logo.y === logo2.y) {
+        console.log(logo.y);
+        console.log(logo2.y);
+    }
+
+
+    //    this.input.on('pointerdown', function (pointer) {
+    //        var touchX = pointer.x;
+    //        var touchY = pointer.y;
+    //        logo.moveTo.moveTo(touchX, touchY);
+    //        //TODO - adicionar parar movimento caso haja colisão
+    //    });
 }
