@@ -2,22 +2,36 @@ function update() {
 
     //Click and Move
     var pointer = this.input.mousePointer
+
     if (pointer.isDown) {
-        var touchX = pointer.x;
-        var touchY = pointer.y;
-        logo.moveTo.moveTo(touchX, touchY);
+        touchX = pointer.x;
+        touchY = pointer.y;
+        console.log("Move to (" + touchX + ", " + touchY + ")");
+
+        var actualXPosition = logo.x;
+        var actualYPosition = logo.y;
+        var deltaX = touchX - actualXPosition;
+        var deltaY = touchY - actualYPosition;
+        
+        console.log("From (" + actualXPosition + ", " + actualYPosition + ")");
+
+        var moveAngle = Math.atan2(deltaY, deltaX);
+
+        var heroVelocityX = heroVelocity * Math.cos(moveAngle);
+        var heroVelocityY = heroVelocity * Math.sin(moveAngle);
+    
+        console.log("With velocity (" + heroVelocityX + ", " + heroVelocityY + ")")
+
+        logo.setVelocity(heroVelocityX, heroVelocityY);
+
     }
     
-    if (logo.y === logo2.y) {
-        console.log(logo.y);
-        console.log(logo2.y);
+    if (logo.x >= touchX - 0.5 && logo.x <= touchX + 0.5  && logo.y >= touchY - 0.5 && logo.y <= touchY + 0.5) {
+        console.log("Movement complete.");
+        console.log("Set to (" + touchX + ", " + touchY + ")");
+        console.log("Reached (" + logo.x + ", " + logo.y + ")");
+        
+        logo.setVelocity(0, 0);
     }
 
-
-    //    this.input.on('pointerdown', function (pointer) {
-    //        var touchX = pointer.x;
-    //        var touchY = pointer.y;
-    //        logo.moveTo.moveTo(touchX, touchY);
-    //        //TODO - adicionar parar movimento caso haja colisão
-    //    });
 }

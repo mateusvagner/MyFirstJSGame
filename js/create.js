@@ -1,5 +1,9 @@
 function create() {
     console.log("Create called.")
+    heroVelocity = 100;
+    touchX = 0;
+    touchY = 0;
+    
     //Backgorund
     var mainBackground = this.add.image(400, 300, 'sky');
     
@@ -17,7 +21,7 @@ function create() {
     });
 
     var emitterYellow = particlesYellow.createEmitter({
-        speed: 100,
+        speed: 50,
         scale: {
             start: 2,
             end: 0
@@ -28,16 +32,7 @@ function create() {
 
     logo = this.physics.add.image(400, 400, 'logo');
     logo.setBounce(0.5, 0.5); //colisao elastica
-    logo.setCollideWorldBounds(true);
-    //logo.setPosition(400, 300);    
-
-    
-    //Add movement to logo (moveTo Package)
-    logo.moveTo = this.plugins.get('rexmovetoplugin').add(logo, {
-        speed: 100,
-        rotateToTarget: false
-    })
-    
+    logo.setCollideWorldBounds(true);   
   
     emitterRed.startFollow(logo);
     emitterYellow.startFollow(logo);
@@ -45,9 +40,9 @@ function create() {
     logo2 = this.physics.add.image(400, 100, 'logo');
     logo2.setBounce(0.5, 0.5); //colisao elastica
     logo2.setCollideWorldBounds(true);
-    logo2.setVelocity(0,100);
-    
-    this.physics.add.collider(logo, logo2);
-    this.physics.add.collider(logo2, logo);
+    logo2.setVelocity(0, 10);
+
+    //Colliders
+    collider = this.physics.add.collider(logo, logo2);
 
 }

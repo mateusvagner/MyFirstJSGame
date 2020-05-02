@@ -1,17 +1,21 @@
 (function () {
 
-    //Elementos
-    var logo = null;
-    var logo2 = null;
-    var config = configuration();
+    //Elements
+    var logo;
+    var logo2;
+    
+    //Variables for Physics and Movements 
+    var collider;
+    var heroVelocity;
+    var touchX;
+    var touchY;
+    
 
     //Packages
     var url = ''
     
     //Game
+    var config = configuration();
     var game = new Phaser.Game(config);
-       //Frame Count
-    var frameCount = game.getFrame();
-
 
 }());
