@@ -1,8 +1,9 @@
 function update() {
 
-    //Click and Move
+    //Click and Move Hero
     var pointer = this.input.mousePointer
 
+    //TODO ESPECIFICAR ÁREA DE ATUAÇÃO DO MOUSE. LEMBRAR DE FAZER UM CABEÇALHOONDE ALGUMAR ARMAS ESPECIAIS SERÃO HABILITADAS.
     if (pointer.isDown) {
         touchX = pointer.x;
         touchY = pointer.y;
@@ -23,15 +24,12 @@ function update() {
         console.log("With velocity (" + heroVelocityX + ", " + heroVelocityY + ")")
 
         logo.setVelocity(heroVelocityX, heroVelocityY);
-
     }
     
     if (logo.x >= touchX - 0.5 && logo.x <= touchX + 0.5  && logo.y >= touchY - 0.5 && logo.y <= touchY + 0.5) {
-        console.log("Movement complete.");
-        console.log("Set to (" + touchX + ", " + touchY + ")");
-        console.log("Reached (" + logo.x + ", " + logo.y + ")");
-        
+        console.log("Movement complete.");        
         logo.setVelocity(0, 0);
     }
-
+    
+    
 }

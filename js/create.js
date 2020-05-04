@@ -1,11 +1,14 @@
 function create() {
     console.log("Create called.")
+    
+    //Backgorund
+    var mainBackground = this.add.image(400, 300, 'sky');
+    
+    //Some Parameters
     heroVelocity = 100;
     touchX = 0;
     touchY = 0;
     
-    //Backgorund
-    var mainBackground = this.add.image(400, 300, 'sky');
     
      //Emmitters
     var particlesRed = this.add.particles('red');
@@ -29,7 +32,7 @@ function create() {
         blendMode: 'ADD'
     });
 
-
+    
     logo = this.physics.add.image(400, 400, 'logo');
     logo.setBounce(0.5, 0.5); //colisao elastica
     logo.setCollideWorldBounds(true);   

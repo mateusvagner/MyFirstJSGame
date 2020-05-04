@@ -1,6 +1,7 @@
 function preload() {
     console.log("Preload called.")
-    //Imagens dos Elementos
+    
+    //Element Images
     this.load.setBaseURL('http://labs.phaser.io/');
 
     this.load.image('sky', 'assets/skies/space3.png');
