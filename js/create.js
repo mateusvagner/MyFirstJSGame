@@ -1,15 +1,14 @@
 function create() {
     console.log("Create called.")
     
+    //Game
+    
     //Backgorund
     var mainBackground = this.add.image(400, 300, 'sky');
     
-    //Hero Variables Assignments
-    hero = this.physics.add.image(400, 400, 'logo');
+    //Pointer
+    pointer = this.input.mousePointer
     
-    
-    
-      
      //Emmitters
 //    var particlesRed = this.add.particles('red');
 //    var particlesYellow = this.add.particles('yellow');
@@ -32,8 +31,8 @@ function create() {
 //        blendMode: 'ADD'
 //    });
 
-    
-    //hero = this.physics.add.image(400, 400, 'logo');
+   //Hero Assignments
+    hero = this.physics.add.image(400, 400, 'logo');
     hero.setBounce(0.5, 0.5); //colisao elastica
     hero.setCollideWorldBounds(true); 
     makeHero(hero);

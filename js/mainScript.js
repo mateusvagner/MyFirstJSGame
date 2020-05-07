@@ -1,4 +1,4 @@
-//Hero
+//--Hero--//
 var hero;
 let makeHero = obj => {
     obj.velocityAbs = 50;
@@ -11,7 +11,7 @@ let makeHero = obj => {
     }
 }
 
-//Enemies
+//--Enemies--//
 
 //Physics and Movements Variables
 var collider;
@@ -20,3 +20,4 @@ var collider;
 //Game
 var config = configuration();
 var game = new Phaser.Game(config);
+var pointer;
