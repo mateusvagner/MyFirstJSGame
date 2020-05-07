@@ -4,48 +4,44 @@ function create() {
     //Backgorund
     var mainBackground = this.add.image(400, 300, 'sky');
     
-    //Some Parameters
-    heroVelocity = 100;
-    touchX = 0;
-    touchY = 0;
+    //Hero Variables Assignments
+    hero = this.physics.add.image(400, 400, 'logo');
     
     
+    
+      
      //Emmitters
-    var particlesRed = this.add.particles('red');
-    var particlesYellow = this.add.particles('yellow');
-
-    var emitterRed = particlesRed.createEmitter({
-        speed: 250,
-        scale: {
-            start: 1,
-            end: 0
-        },
-        blendMode: 'ADD'
-    });
-
-    var emitterYellow = particlesYellow.createEmitter({
-        speed: 50,
-        scale: {
-            start: 2,
-            end: 0
-        },
-        blendMode: 'ADD'
-    });
+//    var particlesRed = this.add.particles('red');
+//    var particlesYellow = this.add.particles('yellow');
+//
+//    var emitterRed = particlesRed.createEmitter({
+//        speed: 250,
+//        scale: {
+//            start: 1,
+//            end: 0
+//        },
+//        blendMode: 'ADD'
+//    });
+//
+//    var emitterYellow = particlesYellow.createEmitter({
+//        speed: 50,
+//        scale: {
+//            start: 2,
+//            end: 0
+//        },
+//        blendMode: 'ADD'
+//    });
 
     
-    logo = this.physics.add.image(400, 400, 'logo');
-    logo.setBounce(0.5, 0.5); //colisao elastica
-    logo.setCollideWorldBounds(true);   
+    //hero = this.physics.add.image(400, 400, 'logo');
+    hero.setBounce(0.5, 0.5); //colisao elastica
+    hero.setCollideWorldBounds(true); 
+    makeHero(hero);
   
-    emitterRed.startFollow(logo);
-    emitterYellow.startFollow(logo);
-    
-    logo2 = this.physics.add.image(400, 100, 'logo');
-    logo2.setBounce(0.5, 0.5); //colisao elastica
-    logo2.setCollideWorldBounds(true);
-    logo2.setVelocity(0, 10);
+//    emitterRed.startFollow(logo);
+//    emitterYellow.startFollow(logo);
 
     //Colliders
-    collider = this.physics.add.collider(logo, logo2);
+//    collider = this.physics.add.collider(object1, object2);
 
 }
