@@ -2,11 +2,11 @@ function update() {
 
     //Move Hero
     if (pointer.isDown) {
-        moveToTarget(pointer, hero);
+        hero.moveToTarget(pointer.x, pointer.y);
     }
     
     if (hero.isMoving) {
-        checkMovementCompleted(hero);
+        hero.checkMovementCompleted();
     }
     
     //TODO ESPECIFICAR ÁREA DE ATUAÇÃO DO MOUSE. LEMBRAR DE FAZER UM CABEÇALHOONDE ALGUMAR ARMAS ESPECIAIS SERÃO HABILITADAS.,

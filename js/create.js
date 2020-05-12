@@ -3,42 +3,14 @@ function create() {
     
     //Game
     
-    //Backgorund
-    var mainBackground = this.add.image(400, 300, 'sky');
-    
-    //Pointer
+    mainBackground = this.add.image(400, 300, 'sky');
     pointer = this.input.mousePointer
     
-     //Emmitters
-//    var particlesRed = this.add.particles('red');
-//    var particlesYellow = this.add.particles('yellow');
-//
-//    var emitterRed = particlesRed.createEmitter({
-//        speed: 250,
-//        scale: {
-//            start: 1,
-//            end: 0
-//        },
-//        blendMode: 'ADD'
-//    });
-//
-//    var emitterYellow = particlesYellow.createEmitter({
-//        speed: 50,
-//        scale: {
-//            start: 2,
-//            end: 0
-//        },
-//        blendMode: 'ADD'
-//    });
-
-   //Hero Assignments
-    hero = this.physics.add.image(400, 400, 'logo');
+   //Hero 
+    hero = this.physics.add.image(400, 400, 'hero');
     hero.setBounce(0.5, 0.5); //colisao elastica
     hero.setCollideWorldBounds(true); 
-    makeHero(hero);
-  
-//    emitterRed.startFollow(logo);
-//    emitterYellow.startFollow(logo);
+    addMovementFeature(hero);
 
     //Colliders
 //    collider = this.physics.add.collider(object1, object2);
