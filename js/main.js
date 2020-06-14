@@ -1,14 +1,14 @@
 //--Hero--//
 var hero;
-const initialHeroVelocity = 25;
+var initialHeroVelocity = 50;
 
 //--Emitter--//
 var particles;
 
 //--Weapons--//
 var waterGun;
-var gunSpeed = initialHeroVelocity * 1.1;
-var maxAmmo = 15;
+var gunSpeedMultiplier = 3;
+var maxAmmo = 5;
 var lastFired = 0;
 
 //--Enemies--//

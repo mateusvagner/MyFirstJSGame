@@ -5,23 +5,25 @@ function create() {
     mainBackground = this.add.image(400, 300, 'sky');
     pointer = this.input.mousePointer
     spaceBar = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
-    //    spaceKey = this.input.keyboard.addKey(Phaser.KeyCode.SPACEBAR);
 
     //--Hero--//
-    hero = this.physics.add.image(400, 400, 'hero');
-    hero.setBounce(0.5, 0.5); //colisao elastica
+    hero = this.physics.add.group({
+        classType: Hero,
+        maxSize: 1,
+        runChildUpdate: true
+    });    
+    hero = hero.get() //ideal é sem grupo
+    hero.setBounce(0.5, 0.5)
     hero.setCollideWorldBounds(true);
-    addMyHero(hero);
-
-    //--Emmitter--//
-    particles = this.add.particles('fire');
-
+     
     //--Weapons--//
-    waterGun = this.add.group({
+    waterGun = this.physics.add.group({
         classType: Weapon,
         maxSize: maxAmmo,
         runChildUpdate: true
     });
+    
+    particles = this.add.particles('fire');
 
     //--Enemies--//
 

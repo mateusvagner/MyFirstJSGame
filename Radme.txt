@@ -5,9 +5,10 @@ Salve a Amazonia
 
 TODOS:
 
+- criação dos inimigos - min ed, min amb, min dh, pres. (obj group)
+- movimentação dos imimigos (aleatório? ou em direção a pessoa?)
 - divisão da área de jogo e menu de armas;
-- criação do canhão da água e armas específicas para cada inimigo;
-- criação dos focos de incendio;
+- criação do canhão armas específicas para cada inimigo (livro, planta, bandeira colorida, cloroquina);
 - criação do score;
 - figuras;
 - niveis de dificulade;
